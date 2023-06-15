@@ -1,3 +1,5 @@
+import styles from "./category.module.css";
+
 const Category = (props) => {
     const { category } = props;
 
@@ -15,7 +17,7 @@ const Category = (props) => {
     });
     categoryName = categoryName.slice(0, -1);
 
-    return <div>{categoryName}</div>;
+    return <div className={styles.category}>{categoryName}</div>;
 };
 
 export default Category;

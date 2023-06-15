@@ -3,3 +3,15 @@ body {
     height: 100vh;
     background-color: #111111;
 }
+main {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+.main-inner {
+    width: 900px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+}

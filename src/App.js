@@ -12,14 +12,17 @@ function App() {
         "objects",
         "symbols",
         "flags",
+        "random",
     ];
     return (
         <>
             <Header />
             <main>
-                {categories.map((category) => {
-                    return <Category category={category} />;
-                })}
+                <div className="main-inner">
+                    {categories.map((category) => {
+                        return <Category category={category} />;
+                    })}
+                </div>
             </main>
         </>
     );
