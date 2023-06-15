@@ -9,7 +9,6 @@ const Category = (props) => {
         let newWord = "";
         if (word !== "and") {
             newWord = word.substring(0, 1).toUpperCase() + word.substring(1) + " ";
-            console.log(newWord);
         } else {
             newWord = "and ";
         }
@@ -17,7 +16,61 @@ const Category = (props) => {
     });
     categoryName = categoryName.slice(0, -1);
 
-    return <div className={styles.category}>{categoryName}</div>;
+    const emojis = [
+        {
+            name: "red heart",
+            emoji: "❤️",
+        },
+        {
+            name: "red heart",
+            emoji: "❤️",
+        },
+        {
+            name: "red heart",
+            emoji: "❤️",
+        },
+        {
+            name: "red heart",
+            emoji: "❤️",
+        },
+        {
+            name: "red heart",
+            emoji: "❤️",
+        },
+        {
+            name: "red heart",
+            emoji: "❤️",
+        },
+        {
+            name: "red heart",
+            emoji: "❤️",
+        },
+        {
+            name: "red heart",
+            emoji: "❤️",
+        },
+        {
+            name: "red heart",
+            emoji: "❤️",
+        },
+    ];
+    return (
+        <div className={styles.category}>
+            <p className={styles.title}>
+                <a>{categoryName}</a>
+            </p>
+            <div className={styles.emojis}>
+                {emojis.map((emojiData, index) => {
+                    return (
+                        <div className={styles.emoji} key={index}>
+                            <span className={styles["emoji-pic"]}>{emojiData.emoji}</span>
+                            <span className={styles["emoji-name"]}>{emojiData.name}</span>
+                        </div>
+                    );
+                })}
+            </div>
+        </div>
+    );
 };
 
 export default Category;

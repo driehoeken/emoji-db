@@ -19,8 +19,8 @@ function App() {
             <Header />
             <main>
                 <div className="main-inner">
-                    {categories.map((category) => {
-                        return <Category category={category} />;
+                    {categories.map((category, index) => {
+                        return <Category key={index} category={category} />;
                     })}
                 </div>
             </main>
