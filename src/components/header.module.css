@@ -1,0 +1,16 @@
+.header {
+    background-color: #075411;
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+}
+.container {
+    width: 70%;
+    margin: 10px 0 0 0;
+}
+.logo {
+    width: 100%;
+    font-size: 30px;
+    font-weight: bold;
+}
