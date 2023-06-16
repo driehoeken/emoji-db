@@ -1,8 +1,8 @@
 import "./App.css";
 import Category from "./components/Category";
 import Header from "./components/Header";
-import useFetchData from "./hooks/useFetchData";
-
+import Random from "./components/Random";
+import Card from "./components/Card";
 function App() {
     const categories = [
         "smileys-and-people",
@@ -13,17 +13,22 @@ function App() {
         "objects",
         "symbols",
         "flags",
-        "random",
     ];
-    useFetchData("/all");
     return (
         <>
             <Header />
             <main>
                 <div className="main-inner">
                     {categories.map((category, index) => {
-                        return <Category key={index} category={category} />;
+                        return (
+                            <Card>
+                                <Category key={index} category={category} />
+                            </Card>
+                        );
                     })}
+                    <Card>
+                        <Random />
+                    </Card>
                 </div>
             </main>
         </>

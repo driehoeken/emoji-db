@@ -7,7 +7,7 @@ const useFetchData = (endpoint) => {
 
     useEffect(() => {
         async function fetchData() {
-            const url = "https://emojihub.yurace.pro/api" + endpoint;
+            const url = "https://emojihub.yurace.pro/api/all" + endpoint;
             try {
                 const res = await fetch(url);
                 const jsonData = await res.json();
@@ -23,6 +23,7 @@ const useFetchData = (endpoint) => {
 
         fetchData();
     }, []);
+    return { data, loading, error };
 };
 
 export default useFetchData;

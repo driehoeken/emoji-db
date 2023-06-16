@@ -1,8 +1,10 @@
+import { useState } from "react";
 import styles from "./category.module.css";
+import useFetchData from "../hooks/useFetchData";
 
 const Category = (props) => {
     const { category } = props;
-
+    const { data, loading, error } = useFetchData("/category/" + category);
     //formatting categoryName
     let categoryName = "";
     category.split("-").forEach((word) => {
@@ -54,31 +56,24 @@ const Category = (props) => {
             emoji: "❤️",
         },
     ];
+
     return (
-        <div className={styles.category}>
+        <>
             <p className={styles.title}>
                 <a>{categoryName}</a>
             </p>
-            {category !== "random" ? (
-                //if it is not random category
-                <div className={styles.emojis}>
-                    {emojis.map((emojiData, index) => {
-                        return (
-                            <div className={styles.emoji} key={index}>
-                                <span className={styles["emoji-pic"]}>{emojiData.emoji}</span>
-                                <span className={styles["emoji-name"]}>{emojiData.name}</span>
-                            </div>
-                        );
-                    })}
-                </div>
-            ) : (
-                //if it is a random category
-                <div className={styles["random-category-inner"]}>
-                    <button className={styles["random-button"]}>Try your luck!</button>
-                    <p>Check what emoji you can get!</p>
-                </div>
-            )}
-        </div>
+            <div className={styles.emojis}>
+                {emojis.map((emojiData, index) => {
+                    return (
+                        <div className={styles.emoji} key={index}>
+                            <span className={styles["emoji-pic"]}>{emojiData.emoji}</span>
+                            <span className={styles["emoji-name"]}>{emojiData.name}</span>
+                        </div>
+                    );
+                })}
+            </div>
+            <a>See all 000 emojis!</a>
+        </>
     );
 };
 
