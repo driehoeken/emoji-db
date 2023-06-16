@@ -1,6 +1,7 @@
 import "./App.css";
 import Category from "./components/Category";
 import Header from "./components/Header";
+import useFetchData from "./hooks/useFetchData";
 
 function App() {
     const categories = [
@@ -14,6 +15,7 @@ function App() {
         "flags",
         "random",
     ];
+    useFetchData("/all");
     return (
         <>
             <Header />
