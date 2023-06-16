@@ -33,3 +33,20 @@
 .emoji-name {
     text-align: center;
 }
+.random-category-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+}
+.random-button {
+    border: none;
+    border-radius: 10px;
+    background-color: #075411;
+    color: white;
+    font-size: 20px;
+    padding: 5px;
+    cursor: pointer;
+}

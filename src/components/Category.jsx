@@ -59,16 +59,25 @@ const Category = (props) => {
             <p className={styles.title}>
                 <a>{categoryName}</a>
             </p>
-            <div className={styles.emojis}>
-                {emojis.map((emojiData, index) => {
-                    return (
-                        <div className={styles.emoji} key={index}>
-                            <span className={styles["emoji-pic"]}>{emojiData.emoji}</span>
-                            <span className={styles["emoji-name"]}>{emojiData.name}</span>
-                        </div>
-                    );
-                })}
-            </div>
+            {category !== "random" ? (
+                //if it is not random category
+                <div className={styles.emojis}>
+                    {emojis.map((emojiData, index) => {
+                        return (
+                            <div className={styles.emoji} key={index}>
+                                <span className={styles["emoji-pic"]}>{emojiData.emoji}</span>
+                                <span className={styles["emoji-name"]}>{emojiData.name}</span>
+                            </div>
+                        );
+                    })}
+                </div>
+            ) : (
+                //if it is a random category
+                <div className={styles["random-category-inner"]}>
+                    <button className={styles["random-button"]}>Try your luck!</button>
+                    <p>Check what emoji you can get!</p>
+                </div>
+            )}
         </div>
     );
 };
