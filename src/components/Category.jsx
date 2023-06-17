@@ -25,14 +25,19 @@ const Category = (props) => {
                 <a>{categoryName}</a>
             </p>
             <div className={styles.emojis}>
-                {emojis.map((emojiData, index) => {
-                    return (
-                        <div className={styles.emoji} key={index}>
-                            <span className={styles["emoji-pic"]}>{emojiData?.emoji}</span>
-                            <span className={styles["emoji-name"]}>{emojiData?.name}</span>
-                        </div>
-                    );
-                })}
+                {
+                    // prettier-ignore
+                    (data &&
+                    !loading) &&
+                    data.slice(0,9).map((emojiData, index) => {
+                        return (
+                            <div className={styles.emoji} key={index}>
+                                <span className={styles["emoji-pic"]}>{String.fromCodePoint(emojiData.unicode[0].replace('U+', '0x'))}</span>
+                                <span className={styles["emoji-name"]}>{/*emojiData.name*/}</span>
+                            </div>
+                        );
+                    })
+                }
             </div>
             <a>See all 000 emojis!</a>
         </>
