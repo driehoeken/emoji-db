@@ -5,9 +5,14 @@
 }
 .emojis {
     width: 90%;
-    height: 250px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 5px;
+}
+.empty {
+    flex: 1;
+}
+.all {
+    margin-bottom: 5px;
 }

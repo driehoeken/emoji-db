@@ -35,7 +35,8 @@ const Category = (props) => {
                     })
                 }
             </div>
-            <a>See all 000 emojis!</a>
+            <div className={styles.empty}></div>
+            <a className={styles.all}>See all 000 emojis!</a>
         </>
     );
 };
