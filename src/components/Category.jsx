@@ -1,9 +1,9 @@
 import { useState } from "react";
 import styles from "./category.module.css";
 import useFetchData from "../hooks/useFetchData";
+import Emoji from "./Emoji";
 
 const Category = (props) => {
-    const [emojis, setEmoji] = useState([]);
     const { category } = props;
     const { data, loading, error } = useFetchData("/category/" + category);
     //formatting categoryName
@@ -27,14 +27,10 @@ const Category = (props) => {
             <div className={styles.emojis}>
                 {
                     // prettier-ignore
-                    (data &&
-                    !loading) &&
+                    (data && !loading) &&
                     data.slice(0,9).map((emojiData, index) => {
                         return (
-                            <div className={styles.emoji} key={index}>
-                                <span className={styles["emoji-pic"]}>{String.fromCodePoint(emojiData.unicode[0].replace('U+', '0x'))}</span>
-                                <span className={styles["emoji-name"]}>{/*emojiData.name*/}</span>
-                            </div>
+                            <Emoji emojiData={emojiData} key={index}/>
                         );
                     })
                 }

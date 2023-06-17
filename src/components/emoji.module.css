@@ -1,0 +1,8 @@
+.emoji {
+    display: flex;
+    flex-direction: column;
+    flex-basis: calc(33.333333% - 3.3333px);
+}
+.emoji-pic {
+    font-size: 40px;
+}
