@@ -3,6 +3,7 @@ import styles from "./category.module.css";
 import useFetchData from "../hooks/useFetchData";
 
 const Category = (props) => {
+    const [emojis, setEmoji] = useState([]);
     const { category } = props;
     const { data, loading, error } = useFetchData("/category/" + category);
     //formatting categoryName
@@ -18,45 +19,6 @@ const Category = (props) => {
     });
     categoryName = categoryName.slice(0, -1);
 
-    const emojis = [
-        {
-            name: "red heart",
-            emoji: "❤️",
-        },
-        {
-            name: "red heart",
-            emoji: "❤️",
-        },
-        {
-            name: "red heart",
-            emoji: "❤️",
-        },
-        {
-            name: "red heart",
-            emoji: "❤️",
-        },
-        {
-            name: "red heart",
-            emoji: "❤️",
-        },
-        {
-            name: "red heart",
-            emoji: "❤️",
-        },
-        {
-            name: "red heart",
-            emoji: "❤️",
-        },
-        {
-            name: "red heart",
-            emoji: "❤️",
-        },
-        {
-            name: "red heart",
-            emoji: "❤️",
-        },
-    ];
-
     return (
         <>
             <p className={styles.title}>
@@ -66,8 +28,8 @@ const Category = (props) => {
                 {emojis.map((emojiData, index) => {
                     return (
                         <div className={styles.emoji} key={index}>
-                            <span className={styles["emoji-pic"]}>{emojiData.emoji}</span>
-                            <span className={styles["emoji-name"]}>{emojiData.name}</span>
+                            <span className={styles["emoji-pic"]}>{emojiData?.emoji}</span>
+                            <span className={styles["emoji-name"]}>{emojiData?.name}</span>
                         </div>
                     );
                 })}

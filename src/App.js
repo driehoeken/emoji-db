@@ -21,8 +21,8 @@ function App() {
                 <div className="main-inner">
                     {categories.map((category, index) => {
                         return (
-                            <Card>
-                                <Category key={index} category={category} />
+                            <Card key={index}>
+                                <Category category={category} />
                             </Card>
                         );
                     })}
