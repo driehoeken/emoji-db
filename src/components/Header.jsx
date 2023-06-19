@@ -1,3 +1,4 @@
+import SearchBar from "./SearchBar";
 import styles from "./header.module.css";
 
 const Header = () => {
@@ -6,7 +7,7 @@ const Header = () => {
             <div className={styles.container}>
                 <div className={styles.logo}>emojidb</div>
                 <div className={styles.description}>Simple database of all emojis!</div>
-                <div className="search-bar"></div>
+                <SearchBar />
             </div>
         </header>
     );
